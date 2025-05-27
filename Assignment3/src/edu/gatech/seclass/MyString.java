@@ -76,12 +76,16 @@ public class MyString implements MyStringInterface {
             throw new NullPointerException();
         }
         // Check arg1: co-prime to 62, 0 < arg1 < 62, and odd (all valid values)
-        int[] validA = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61};
-        boolean foundA = false;
-        for (int a : validA) {
-            if (a == arg1) foundA = true;
+        int[] validArg1 = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61};
+        boolean foundArg1 = false;
+        for (int a : validArg1) {
+            if (a == arg1) {
+                foundArg1 = true;
+                break;
+            }
         }
-        if (!foundA || arg2 < 1 || arg2 >= 62) {
+        // arg2 is between 1 and 62 included.
+        if (!foundArg1 || arg2 < 1 || arg2 >= 62) {
             throw new IllegalArgumentException();
         }
         // Check myString contains at least one letter or digit
@@ -97,7 +101,7 @@ public class MyString implements MyStringInterface {
                 int newIdx = (arg1 * idx + arg2) % 62;
                 sb.append(chars.charAt(newIdx));
             } else {
-                sb.append(c); // non-alphanum remains
+                sb.append(c); // non-alpha and digit remains
             }
         }
         return sb.toString();
