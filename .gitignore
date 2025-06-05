@@ -17,3 +17,13 @@ target
 *.iml
 out/
 src/main/java/META-INF
+
+.gradle
+local.properties
+.idea/workspace.xml
+.idea/libraries
+.idea
+.DS_Store
+build
+captures
+.externalNativeBuild

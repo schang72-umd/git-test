@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">SDPEncryptor</string>
+    <string name="message_text">Message Text</string>
+    <string name="enter_message">Enter message</string>
+    <string name="scale_input">Scale Input</string>
+    <string name="scale">Scale</string>
+    <string name="shift_input">Shift Input</string>
+    <string name="shift">Shift</string>
+    <string name="encode_message_text">ENCODE MESSAGE TEXT</string>
+    <string name="message_text_encoded">Message Text Encoded</string>
+    <string name="sdp_encryptor_summer_2025">SDP Encryptor Summer 2025</string>
+</resources>

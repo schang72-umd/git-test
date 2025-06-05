@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingLeft="3dp"
+    android:paddingRight="3dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Some space to skip the top -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@android:color/transparent" />
+
+    <!-- Application Name -->
+    <TextView
+        android:id="@+id/topAppName"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="?attr/colorPrimary"
+        android:text="@string/sdp_encryptor_summer_2025"
+        android:textStyle="bold"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="16sp"
+        android:autoSizeMaxTextSize="25sp"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        />
+
+    <!-- Some space -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="@android:color/transparent" />
+
+    <!-- Content Padding -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="8dp">
+
+        <!-- Row: Message Text -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/message_text"
+                android:textSize="14sp"
+                android:textColor="#888888"
+                />
+
+            <EditText
+                android:id="@+id/messageTextID"
+                android:layout_width="0dp"
+                android:layout_height="65dp"
+                android:layout_weight="2"
+                android:hint="@string/enter_message"
+                android:singleLine="true"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!-- Row: Scale Input -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/scale_input"
+                android:textSize="14sp"
+                android:textColor="#888888"
+                />
+
+            <EditText
+                android:id="@+id/scaleInputID"
+                android:layout_width="0dp"
+                android:layout_height="65dp"
+                android:layout_weight="2"
+                android:hint="@string/scale"
+                android:inputType="number"
+                android:singleLine="true"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!-- Row: Shift Input -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/shift_input"
+                android:textSize="14sp"
+                android:textColor="#888888"
+                />
+
+            <EditText
+                android:id="@+id/shiftInputID"
+                android:layout_width="0dp"
+                android:layout_height="65dp"
+                android:layout_weight="2"
+                android:hint="@string/shift"
+                android:inputType="number"
+                android:singleLine="true"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!-- Encode Button -->
+
+        <!-- Encoded Message Section -->
+
+        <Button
+            android:id="@+id/encodeButtonID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:gravity="center"
+            android:backgroundTint="?attr/colorPrimary"
+            android:text="@string/encode_message_text"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/textViewEncodedLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/message_text_encoded"
+            android:textColor="#888888"
+            android:textSize="14sp"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            />
+
+        <TextView
+            android:id="@+id/encodedTextID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#888888"
+            android:textSize="16sp"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="4dp"
+            />
+    </LinearLayout>
+</LinearLayout>
