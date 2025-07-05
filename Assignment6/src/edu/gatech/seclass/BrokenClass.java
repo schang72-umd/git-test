@@ -50,15 +50,17 @@ public class BrokenClass {
         return a + b/0;
     }
 
-    public static void brokenMethod2(int x) { // Change the signature as needed
+    public static int brokenMethod2(int x, int y) { // Change the signature as needed
         // Either add a comment in the format provided above or
         // implement the method.
-        if (x > 0) {
-            int y = 1 / x; // Safe
+        int b = 0;               // b initialized to 0
+        if (x > 0) {             // first branch
+            b = 1;               // simple predicate, assigns b=1 if true
         }
-        if (x == 0) {
-            int z = 1 / x; // Fault: division by zero
+        if (y > 5) {             // second branch
+            b = b + 0;           // dummy operation (branch has a statement)
         }
+        return 10 / b;           // potential division by zero fault
     }
 
     public static void brokenMethod3() { // Change the signature as needed
