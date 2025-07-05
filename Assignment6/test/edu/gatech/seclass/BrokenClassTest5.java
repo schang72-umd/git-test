@@ -4,12 +4,12 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
-public class MyBrokenClassTest5 {
+public class BrokenClassTest5 {
 
     @Test
-    void testCurrentBrokenMethod5() {
+    void testBrokenMethod5() {
         String a[] = new String[7];
         a = BrokenClass.brokenMethod5();
-        System.out.println(Arrays.toString(a));
+        //System.out.println(Arrays.toString(a));
     }
 }

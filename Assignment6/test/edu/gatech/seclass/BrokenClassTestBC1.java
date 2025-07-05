@@ -15,6 +15,6 @@ public class BrokenClassTestBC1 {
     public void test_a_le_0_b_gt_0() {
         BrokenClass.brokenMethod1(0, 3);
     }
-    // Both branches (x>0 and y>0) are covered in both true/false forms,
-    // but never x <= 0, y <= 0, so the division-by-zero is NOT triggered.
+    // Both branches (a>0 and b>0) are covered in both true/false forms,
+    // but never a <= 0, b <= 0, so the division-by-zero is NOT triggered.
 }
