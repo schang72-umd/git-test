@@ -10,6 +10,6 @@ public class BrokenClassTest5 {
     void testBrokenMethod5() {
         String a[] = new String[7];
         a = BrokenClass.brokenMethod5();
-        //System.out.println(Arrays.toString(a));
+        System.out.println(Arrays.toString(a));
     }
 }

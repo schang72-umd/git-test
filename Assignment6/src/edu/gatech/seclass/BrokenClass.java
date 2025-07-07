@@ -64,12 +64,23 @@ public class BrokenClass {
     }
 
     public static void brokenMethod3() { // Change the signature as needed
+        // From ChatGPT
         // It is not possible to construct a method with only simple predicates,
         // no nested ifs, and no compound branches, such that:
         // (1) The fault is only revealed by achieving 100% statement coverage, and
         // (2) Any test suite that achieves 100% branch coverage reveals the fault.
         // This is because each branch can be executed independently, so the faulty
         // statement can always be executed without covering all statements.
+
+        // From DeepSeek
+        // It is not possible to construct a method that meets both requirements under the given constraints.
+        // Reason: To satisfy condition (1), the fault must be on a statement that is always executed when any
+        // branch is taken (otherwise a test could execute a branch without hitting the fault). But to satisfy
+        // condition (2), the fault must be revealed by all possible branch-covering test suites. With simple
+        // predicates and no nesting, the only way to ensure all branch-covering suites reveal the fault is to
+        // place the fault where all execution paths go through it. However, this would mean any test suite
+        // (even with less than 100% statement coverage) would reveal the fault, violating condition (1).
+        // The constraints prevent any other way to structure the control flow to satisfy both conditions.
     }
 
     public static int brokenMethod4(int a, int b, int c, boolean d, boolean e) {
