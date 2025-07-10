@@ -1,0 +1,66 @@
+# transformtxt.tsl – TSL for the “transformtxt” command-line utility
+
+# -------- Skip-Lines Option --------
+Skip Lines:
+    -s 0. [property SkipEven]       # skip every even line
+    -s 1. [property SkipOdd]        # skip every odd line
+
+    # error: integer but outside the inclusive range 0–1 (e.g. “-s 2”, “-s 99”)
+    -s ([2-9]|[1-9][0-9]+).  [error]
+
+    (no-s).                         # no skip option
+
+# ---- Remove Empty-Lines Option ----
+Remove Empty Lines:
+    -x. [property RemoveEmptyLines]       # remove all empty lines
+    (no-x).                               # leave empty lines intact
+
+# --------- Replace Modes -----------
+Replace Mode:
+    -r old new. [property ReplaceFirst]   # replace first occurrence of 'old' with 'new'
+    -g -r old new. [property ReplaceAll]  # replace all occurrences (global replace)
+    -g. [error]                           # error: -g without -r
+
+    # error: empty string as the “old” parameter
+    -r "" new.            [error]                   # old == "" is invalid
+
+    (no-r).
+
+# --- Whitespace vs. Truncate (mutually exclusive) ---
+# remove whitespace
+Whitespace:
+    -w leading.   [property TrimLeading] 	# remove leading whitespace
+    -w trailing.  [property TrimTrailing] 	# remove trailing whitespace
+    -w all.       [property TrimAll] 		# remove all whitespace
+
+    # error: -w with -t (mutually exclusive)
+    -w <spacing> -t <length>.  [error]
+
+    # error: invalid spacing parameter (not one of leading/trailing/all)
+    -w <spacing>.              [error]
+
+    (no-w).             		 		# no whitespace option
+
+# truncate lines
+Truncate:
+    # valid truncate lengths (you can pick representative values)
+    -t 0.      [single][property Truncate0]
+    -t 50.     [single][property TruncateMid]
+    -t 100.    [single][property TruncateMax]
+
+    # error: -t with -w (mutually exclusive)
+    -t <length> -w <spacing>.    [error]
+
+    # error: non-integer or out‐of‐range (<0 or >100)
+    -t <value>.                  [error]
+
+    (no-t).                      # no truncate option
+
+
+# -------- File-Parameter Cases --------
+File:
+    Found.
+    NotFound. [error]
+    NotEntered. [error]
+    -. [error]                      # missing FILE parameter
+    #no-newline.txt. [error]         # file without a terminating newline
