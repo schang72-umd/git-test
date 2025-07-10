@@ -8,6 +8,11 @@ Skip Lines:
     # error: integer but outside the inclusive range 0–1 (e.g. “-s 2”, “-s 99”)
     -s ([2-9]|[1-9][0-9]+).  [error]
 
+    # Missing parameters
+    -s.   [error]
+    
+    #-s (0|1).       [property SkipValidParameters]
+
     (no-s).                         # no skip option
 
 # ---- Remove Empty-Lines Option ----
@@ -23,44 +28,34 @@ Replace Mode:
 
     # error: empty string as the “old” parameter
     -r "" new.            [error]                   # old == "" is invalid
-
+    -r.                   [error]                   # no parameter 
     (no-r).
 
-# --- Whitespace vs. Truncate (mutually exclusive) ---
-# remove whitespace
-Whitespace:
-    -w leading.   [property TrimLeading] 	# remove leading whitespace
-    -w trailing.  [property TrimTrailing] 	# remove trailing whitespace
-    -w all.       [property TrimAll] 		# remove all whitespace
 
-    # error: -w with -t (mutually exclusive)
-    -w <spacing> -t <length>.  [error]
+# --- Whitespace vs Truncate (mutually exclusive) ---
+W and T Mode:
+    #-w leading.                  [property TrimLeading]
+    #-w trailing.                 [property TrimTrailing]
+    #-w all.                      [property TrimAll]
 
-    # error: invalid spacing parameter (not one of leading/trailing/all)
-    -w <spacing>.              [error]
+    -w (leading|trailing|all).      [property Whitespace]   # trim mode
 
-    (no-w).             		 		# no whitespace option
+    -t ([0-9]|[1-9][0-9]|100).       [property Truncate]     # 0–100 inclusive
+    (no-mode).                       [property NoMode]       # neither option
 
-# truncate lines
-Truncate:
-    # valid truncate lengths (you can pick representative values)
-    -t 0.      [single][property Truncate0]
-    -t 50.     [single][property TruncateMid]
-    -t 100.    [single][property TruncateMax]
-
-    # error: -t with -w (mutually exclusive)
-    -t <length> -w <spacing>.    [error]
-
-    # error: non-integer or out‐of‐range (<0 or >100)
-    -t <value>.                  [error]
-
-    (no-t).                      # no truncate option
+    # Error cases 
+    -w.                          [error]                # `-w` missing its arg
+    -w \S+.                      [error]                # `-w` with any non-whitespace token
+    -t.                          [error]                # `-t` missing its arg
+    -t \S+.                      [error]                # `-t` with any non-whitespace token
 
 
-# -------- File-Parameter Cases --------
+# --------- Input File Parameter -----------
 File:
-    Found.
-    NotFound. [error]
-    NotEntered. [error]
-    -. [error]                      # missing FILE parameter
-    #no-newline.txt. [error]         # file without a terminating newline
+    #^input\.txt$               [property FileOK]    # correct filename
+    (no-file).               [error]      # omitted filename entirely
+
+# --------- File Content (input.txt) ---------
+#Content:
+#    "".                        [property EmptyFile]       # empty file is allowed
+

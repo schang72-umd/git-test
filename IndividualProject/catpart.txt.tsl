@@ -4,697 +4,469 @@ Test Case 1  		<error>
 
 
 Test Case 2  		<error>
-   Replace Mode :  -g
+   Skip Lines :  -s
 
 
 Test Case 3  		<error>
-   Replace Mode :  -r "" new
+   Replace Mode :  -g
 
 
 Test Case 4  		<error>
-   Whitespace :  -w <spacing> -t <length>
+   Replace Mode :  -r "" new
 
 
 Test Case 5  		<error>
-   Whitespace :  -w <spacing>
+   Replace Mode :  -r
 
 
-Test Case 6  		<single>
-   Truncate :  -t 0
+Test Case 6  		<error>
+   W and T Mode :  -w
 
 
-Test Case 7  		<single>
-   Truncate :  -t 50
+Test Case 7  		<error>
+   W and T Mode :  -w \S+
 
 
-Test Case 8  		<single>
-   Truncate :  -t 100
+Test Case 8  		<error>
+   W and T Mode :  -t
 
 
 Test Case 9  		<error>
-   Truncate :  -t <length> -w <spacing>
+   W and T Mode :  -t \S+
 
 
 Test Case 10 		<error>
-   Truncate :  -t <value>
+   File :  (no-file)
 
 
-Test Case 11 		<error>
-   File :  NotFound
-
-
-Test Case 12 		<error>
-   File :  NotEntered
-
-
-Test Case 13 		<error>
-   File :  -
-
-
-Test Case 14 		(Key = 1.1.1.1.6.1.)
+Test Case 11 		(Key = 1.1.1.1.0.)
    Skip Lines         :  -s 0
    Remove Empty Lines :  -x
    Replace Mode       :  -r old new
-   Whitespace         :  -w leading
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  -w (leading|trailing|all)
+   File               :  <n/a>
 
 
-Test Case 15 		(Key = 1.1.1.2.6.1.)
+Test Case 12 		(Key = 1.1.1.2.0.)
    Skip Lines         :  -s 0
    Remove Empty Lines :  -x
    Replace Mode       :  -r old new
-   Whitespace         :  -w trailing
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  -t ([0-9]|[1-9][0-9]|100)
+   File               :  <n/a>
 
 
-Test Case 16 		(Key = 1.1.1.3.6.1.)
+Test Case 13 		(Key = 1.1.1.3.0.)
    Skip Lines         :  -s 0
    Remove Empty Lines :  -x
    Replace Mode       :  -r old new
-   Whitespace         :  -w all
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  (no-mode)
+   File               :  <n/a>
 
 
-Test Case 17 		(Key = 1.1.1.6.6.1.)
-   Skip Lines         :  -s 0
-   Remove Empty Lines :  -x
-   Replace Mode       :  -r old new
-   Whitespace         :  (no-w)
-   Truncate           :  (no-t)
-   File               :  Found
-
-
-Test Case 18 		(Key = 1.1.2.1.6.1.)
+Test Case 14 		(Key = 1.1.2.1.0.)
    Skip Lines         :  -s 0
    Remove Empty Lines :  -x
    Replace Mode       :  -g -r old new
-   Whitespace         :  -w leading
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  -w (leading|trailing|all)
+   File               :  <n/a>
 
 
-Test Case 19 		(Key = 1.1.2.2.6.1.)
+Test Case 15 		(Key = 1.1.2.2.0.)
    Skip Lines         :  -s 0
    Remove Empty Lines :  -x
    Replace Mode       :  -g -r old new
-   Whitespace         :  -w trailing
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  -t ([0-9]|[1-9][0-9]|100)
+   File               :  <n/a>
 
 
-Test Case 20 		(Key = 1.1.2.3.6.1.)
+Test Case 16 		(Key = 1.1.2.3.0.)
    Skip Lines         :  -s 0
    Remove Empty Lines :  -x
    Replace Mode       :  -g -r old new
-   Whitespace         :  -w all
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  (no-mode)
+   File               :  <n/a>
 
 
-Test Case 21 		(Key = 1.1.2.6.6.1.)
-   Skip Lines         :  -s 0
-   Remove Empty Lines :  -x
-   Replace Mode       :  -g -r old new
-   Whitespace         :  (no-w)
-   Truncate           :  (no-t)
-   File               :  Found
-
-
-Test Case 22 		(Key = 1.1.5.1.6.1.)
+Test Case 17 		(Key = 1.1.6.1.0.)
    Skip Lines         :  -s 0
    Remove Empty Lines :  -x
    Replace Mode       :  (no-r)
-   Whitespace         :  -w leading
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  -w (leading|trailing|all)
+   File               :  <n/a>
 
 
-Test Case 23 		(Key = 1.1.5.2.6.1.)
+Test Case 18 		(Key = 1.1.6.2.0.)
    Skip Lines         :  -s 0
    Remove Empty Lines :  -x
    Replace Mode       :  (no-r)
-   Whitespace         :  -w trailing
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  -t ([0-9]|[1-9][0-9]|100)
+   File               :  <n/a>
 
 
-Test Case 24 		(Key = 1.1.5.3.6.1.)
+Test Case 19 		(Key = 1.1.6.3.0.)
    Skip Lines         :  -s 0
    Remove Empty Lines :  -x
    Replace Mode       :  (no-r)
-   Whitespace         :  -w all
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  (no-mode)
+   File               :  <n/a>
 
 
-Test Case 25 		(Key = 1.1.5.6.6.1.)
-   Skip Lines         :  -s 0
-   Remove Empty Lines :  -x
-   Replace Mode       :  (no-r)
-   Whitespace         :  (no-w)
-   Truncate           :  (no-t)
-   File               :  Found
-
-
-Test Case 26 		(Key = 1.2.1.1.6.1.)
+Test Case 20 		(Key = 1.2.1.1.0.)
    Skip Lines         :  -s 0
    Remove Empty Lines :  (no-x)
    Replace Mode       :  -r old new
-   Whitespace         :  -w leading
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  -w (leading|trailing|all)
+   File               :  <n/a>
 
 
-Test Case 27 		(Key = 1.2.1.2.6.1.)
+Test Case 21 		(Key = 1.2.1.2.0.)
    Skip Lines         :  -s 0
    Remove Empty Lines :  (no-x)
    Replace Mode       :  -r old new
-   Whitespace         :  -w trailing
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  -t ([0-9]|[1-9][0-9]|100)
+   File               :  <n/a>
 
 
-Test Case 28 		(Key = 1.2.1.3.6.1.)
+Test Case 22 		(Key = 1.2.1.3.0.)
    Skip Lines         :  -s 0
    Remove Empty Lines :  (no-x)
    Replace Mode       :  -r old new
-   Whitespace         :  -w all
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  (no-mode)
+   File               :  <n/a>
 
 
-Test Case 29 		(Key = 1.2.1.6.6.1.)
-   Skip Lines         :  -s 0
-   Remove Empty Lines :  (no-x)
-   Replace Mode       :  -r old new
-   Whitespace         :  (no-w)
-   Truncate           :  (no-t)
-   File               :  Found
-
-
-Test Case 30 		(Key = 1.2.2.1.6.1.)
+Test Case 23 		(Key = 1.2.2.1.0.)
    Skip Lines         :  -s 0
    Remove Empty Lines :  (no-x)
    Replace Mode       :  -g -r old new
-   Whitespace         :  -w leading
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  -w (leading|trailing|all)
+   File               :  <n/a>
 
 
-Test Case 31 		(Key = 1.2.2.2.6.1.)
+Test Case 24 		(Key = 1.2.2.2.0.)
    Skip Lines         :  -s 0
    Remove Empty Lines :  (no-x)
    Replace Mode       :  -g -r old new
-   Whitespace         :  -w trailing
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  -t ([0-9]|[1-9][0-9]|100)
+   File               :  <n/a>
 
 
-Test Case 32 		(Key = 1.2.2.3.6.1.)
+Test Case 25 		(Key = 1.2.2.3.0.)
    Skip Lines         :  -s 0
    Remove Empty Lines :  (no-x)
    Replace Mode       :  -g -r old new
-   Whitespace         :  -w all
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  (no-mode)
+   File               :  <n/a>
 
 
-Test Case 33 		(Key = 1.2.2.6.6.1.)
-   Skip Lines         :  -s 0
-   Remove Empty Lines :  (no-x)
-   Replace Mode       :  -g -r old new
-   Whitespace         :  (no-w)
-   Truncate           :  (no-t)
-   File               :  Found
-
-
-Test Case 34 		(Key = 1.2.5.1.6.1.)
+Test Case 26 		(Key = 1.2.6.1.0.)
    Skip Lines         :  -s 0
    Remove Empty Lines :  (no-x)
    Replace Mode       :  (no-r)
-   Whitespace         :  -w leading
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  -w (leading|trailing|all)
+   File               :  <n/a>
 
 
-Test Case 35 		(Key = 1.2.5.2.6.1.)
+Test Case 27 		(Key = 1.2.6.2.0.)
    Skip Lines         :  -s 0
    Remove Empty Lines :  (no-x)
    Replace Mode       :  (no-r)
-   Whitespace         :  -w trailing
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  -t ([0-9]|[1-9][0-9]|100)
+   File               :  <n/a>
 
 
-Test Case 36 		(Key = 1.2.5.3.6.1.)
+Test Case 28 		(Key = 1.2.6.3.0.)
    Skip Lines         :  -s 0
    Remove Empty Lines :  (no-x)
    Replace Mode       :  (no-r)
-   Whitespace         :  -w all
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  (no-mode)
+   File               :  <n/a>
 
 
-Test Case 37 		(Key = 1.2.5.6.6.1.)
-   Skip Lines         :  -s 0
-   Remove Empty Lines :  (no-x)
-   Replace Mode       :  (no-r)
-   Whitespace         :  (no-w)
-   Truncate           :  (no-t)
-   File               :  Found
-
-
-Test Case 38 		(Key = 2.1.1.1.6.1.)
+Test Case 29 		(Key = 2.1.1.1.0.)
    Skip Lines         :  -s 1
    Remove Empty Lines :  -x
    Replace Mode       :  -r old new
-   Whitespace         :  -w leading
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  -w (leading|trailing|all)
+   File               :  <n/a>
 
 
-Test Case 39 		(Key = 2.1.1.2.6.1.)
+Test Case 30 		(Key = 2.1.1.2.0.)
    Skip Lines         :  -s 1
    Remove Empty Lines :  -x
    Replace Mode       :  -r old new
-   Whitespace         :  -w trailing
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  -t ([0-9]|[1-9][0-9]|100)
+   File               :  <n/a>
 
 
-Test Case 40 		(Key = 2.1.1.3.6.1.)
+Test Case 31 		(Key = 2.1.1.3.0.)
    Skip Lines         :  -s 1
    Remove Empty Lines :  -x
    Replace Mode       :  -r old new
-   Whitespace         :  -w all
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  (no-mode)
+   File               :  <n/a>
 
 
-Test Case 41 		(Key = 2.1.1.6.6.1.)
-   Skip Lines         :  -s 1
-   Remove Empty Lines :  -x
-   Replace Mode       :  -r old new
-   Whitespace         :  (no-w)
-   Truncate           :  (no-t)
-   File               :  Found
-
-
-Test Case 42 		(Key = 2.1.2.1.6.1.)
+Test Case 32 		(Key = 2.1.2.1.0.)
    Skip Lines         :  -s 1
    Remove Empty Lines :  -x
    Replace Mode       :  -g -r old new
-   Whitespace         :  -w leading
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  -w (leading|trailing|all)
+   File               :  <n/a>
 
 
-Test Case 43 		(Key = 2.1.2.2.6.1.)
+Test Case 33 		(Key = 2.1.2.2.0.)
    Skip Lines         :  -s 1
    Remove Empty Lines :  -x
    Replace Mode       :  -g -r old new
-   Whitespace         :  -w trailing
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  -t ([0-9]|[1-9][0-9]|100)
+   File               :  <n/a>
 
 
-Test Case 44 		(Key = 2.1.2.3.6.1.)
+Test Case 34 		(Key = 2.1.2.3.0.)
    Skip Lines         :  -s 1
    Remove Empty Lines :  -x
    Replace Mode       :  -g -r old new
-   Whitespace         :  -w all
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  (no-mode)
+   File               :  <n/a>
 
 
-Test Case 45 		(Key = 2.1.2.6.6.1.)
-   Skip Lines         :  -s 1
-   Remove Empty Lines :  -x
-   Replace Mode       :  -g -r old new
-   Whitespace         :  (no-w)
-   Truncate           :  (no-t)
-   File               :  Found
-
-
-Test Case 46 		(Key = 2.1.5.1.6.1.)
+Test Case 35 		(Key = 2.1.6.1.0.)
    Skip Lines         :  -s 1
    Remove Empty Lines :  -x
    Replace Mode       :  (no-r)
-   Whitespace         :  -w leading
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  -w (leading|trailing|all)
+   File               :  <n/a>
 
 
-Test Case 47 		(Key = 2.1.5.2.6.1.)
+Test Case 36 		(Key = 2.1.6.2.0.)
    Skip Lines         :  -s 1
    Remove Empty Lines :  -x
    Replace Mode       :  (no-r)
-   Whitespace         :  -w trailing
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  -t ([0-9]|[1-9][0-9]|100)
+   File               :  <n/a>
 
 
-Test Case 48 		(Key = 2.1.5.3.6.1.)
+Test Case 37 		(Key = 2.1.6.3.0.)
    Skip Lines         :  -s 1
    Remove Empty Lines :  -x
    Replace Mode       :  (no-r)
-   Whitespace         :  -w all
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  (no-mode)
+   File               :  <n/a>
 
 
-Test Case 49 		(Key = 2.1.5.6.6.1.)
-   Skip Lines         :  -s 1
-   Remove Empty Lines :  -x
-   Replace Mode       :  (no-r)
-   Whitespace         :  (no-w)
-   Truncate           :  (no-t)
-   File               :  Found
-
-
-Test Case 50 		(Key = 2.2.1.1.6.1.)
+Test Case 38 		(Key = 2.2.1.1.0.)
    Skip Lines         :  -s 1
    Remove Empty Lines :  (no-x)
    Replace Mode       :  -r old new
-   Whitespace         :  -w leading
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  -w (leading|trailing|all)
+   File               :  <n/a>
 
 
-Test Case 51 		(Key = 2.2.1.2.6.1.)
+Test Case 39 		(Key = 2.2.1.2.0.)
    Skip Lines         :  -s 1
    Remove Empty Lines :  (no-x)
    Replace Mode       :  -r old new
-   Whitespace         :  -w trailing
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  -t ([0-9]|[1-9][0-9]|100)
+   File               :  <n/a>
 
 
-Test Case 52 		(Key = 2.2.1.3.6.1.)
+Test Case 40 		(Key = 2.2.1.3.0.)
    Skip Lines         :  -s 1
    Remove Empty Lines :  (no-x)
    Replace Mode       :  -r old new
-   Whitespace         :  -w all
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  (no-mode)
+   File               :  <n/a>
 
 
-Test Case 53 		(Key = 2.2.1.6.6.1.)
-   Skip Lines         :  -s 1
-   Remove Empty Lines :  (no-x)
-   Replace Mode       :  -r old new
-   Whitespace         :  (no-w)
-   Truncate           :  (no-t)
-   File               :  Found
-
-
-Test Case 54 		(Key = 2.2.2.1.6.1.)
+Test Case 41 		(Key = 2.2.2.1.0.)
    Skip Lines         :  -s 1
    Remove Empty Lines :  (no-x)
    Replace Mode       :  -g -r old new
-   Whitespace         :  -w leading
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  -w (leading|trailing|all)
+   File               :  <n/a>
 
 
-Test Case 55 		(Key = 2.2.2.2.6.1.)
+Test Case 42 		(Key = 2.2.2.2.0.)
    Skip Lines         :  -s 1
    Remove Empty Lines :  (no-x)
    Replace Mode       :  -g -r old new
-   Whitespace         :  -w trailing
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  -t ([0-9]|[1-9][0-9]|100)
+   File               :  <n/a>
 
 
-Test Case 56 		(Key = 2.2.2.3.6.1.)
+Test Case 43 		(Key = 2.2.2.3.0.)
    Skip Lines         :  -s 1
    Remove Empty Lines :  (no-x)
    Replace Mode       :  -g -r old new
-   Whitespace         :  -w all
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  (no-mode)
+   File               :  <n/a>
 
 
-Test Case 57 		(Key = 2.2.2.6.6.1.)
-   Skip Lines         :  -s 1
-   Remove Empty Lines :  (no-x)
-   Replace Mode       :  -g -r old new
-   Whitespace         :  (no-w)
-   Truncate           :  (no-t)
-   File               :  Found
-
-
-Test Case 58 		(Key = 2.2.5.1.6.1.)
+Test Case 44 		(Key = 2.2.6.1.0.)
    Skip Lines         :  -s 1
    Remove Empty Lines :  (no-x)
    Replace Mode       :  (no-r)
-   Whitespace         :  -w leading
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  -w (leading|trailing|all)
+   File               :  <n/a>
 
 
-Test Case 59 		(Key = 2.2.5.2.6.1.)
+Test Case 45 		(Key = 2.2.6.2.0.)
    Skip Lines         :  -s 1
    Remove Empty Lines :  (no-x)
    Replace Mode       :  (no-r)
-   Whitespace         :  -w trailing
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  -t ([0-9]|[1-9][0-9]|100)
+   File               :  <n/a>
 
 
-Test Case 60 		(Key = 2.2.5.3.6.1.)
+Test Case 46 		(Key = 2.2.6.3.0.)
    Skip Lines         :  -s 1
    Remove Empty Lines :  (no-x)
    Replace Mode       :  (no-r)
-   Whitespace         :  -w all
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  (no-mode)
+   File               :  <n/a>
 
 
-Test Case 61 		(Key = 2.2.5.6.6.1.)
-   Skip Lines         :  -s 1
-   Remove Empty Lines :  (no-x)
-   Replace Mode       :  (no-r)
-   Whitespace         :  (no-w)
-   Truncate           :  (no-t)
-   File               :  Found
-
-
-Test Case 62 		(Key = 4.1.1.1.6.1.)
+Test Case 47 		(Key = 5.1.1.1.0.)
    Skip Lines         :  (no-s)
    Remove Empty Lines :  -x
    Replace Mode       :  -r old new
-   Whitespace         :  -w leading
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  -w (leading|trailing|all)
+   File               :  <n/a>
 
 
-Test Case 63 		(Key = 4.1.1.2.6.1.)
+Test Case 48 		(Key = 5.1.1.2.0.)
    Skip Lines         :  (no-s)
    Remove Empty Lines :  -x
    Replace Mode       :  -r old new
-   Whitespace         :  -w trailing
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  -t ([0-9]|[1-9][0-9]|100)
+   File               :  <n/a>
 
 
-Test Case 64 		(Key = 4.1.1.3.6.1.)
+Test Case 49 		(Key = 5.1.1.3.0.)
    Skip Lines         :  (no-s)
    Remove Empty Lines :  -x
    Replace Mode       :  -r old new
-   Whitespace         :  -w all
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  (no-mode)
+   File               :  <n/a>
 
 
-Test Case 65 		(Key = 4.1.1.6.6.1.)
-   Skip Lines         :  (no-s)
-   Remove Empty Lines :  -x
-   Replace Mode       :  -r old new
-   Whitespace         :  (no-w)
-   Truncate           :  (no-t)
-   File               :  Found
-
-
-Test Case 66 		(Key = 4.1.2.1.6.1.)
+Test Case 50 		(Key = 5.1.2.1.0.)
    Skip Lines         :  (no-s)
    Remove Empty Lines :  -x
    Replace Mode       :  -g -r old new
-   Whitespace         :  -w leading
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  -w (leading|trailing|all)
+   File               :  <n/a>
 
 
-Test Case 67 		(Key = 4.1.2.2.6.1.)
+Test Case 51 		(Key = 5.1.2.2.0.)
    Skip Lines         :  (no-s)
    Remove Empty Lines :  -x
    Replace Mode       :  -g -r old new
-   Whitespace         :  -w trailing
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  -t ([0-9]|[1-9][0-9]|100)
+   File               :  <n/a>
 
 
-Test Case 68 		(Key = 4.1.2.3.6.1.)
+Test Case 52 		(Key = 5.1.2.3.0.)
    Skip Lines         :  (no-s)
    Remove Empty Lines :  -x
    Replace Mode       :  -g -r old new
-   Whitespace         :  -w all
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  (no-mode)
+   File               :  <n/a>
 
 
-Test Case 69 		(Key = 4.1.2.6.6.1.)
-   Skip Lines         :  (no-s)
-   Remove Empty Lines :  -x
-   Replace Mode       :  -g -r old new
-   Whitespace         :  (no-w)
-   Truncate           :  (no-t)
-   File               :  Found
-
-
-Test Case 70 		(Key = 4.1.5.1.6.1.)
+Test Case 53 		(Key = 5.1.6.1.0.)
    Skip Lines         :  (no-s)
    Remove Empty Lines :  -x
    Replace Mode       :  (no-r)
-   Whitespace         :  -w leading
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  -w (leading|trailing|all)
+   File               :  <n/a>
 
 
-Test Case 71 		(Key = 4.1.5.2.6.1.)
+Test Case 54 		(Key = 5.1.6.2.0.)
    Skip Lines         :  (no-s)
    Remove Empty Lines :  -x
    Replace Mode       :  (no-r)
-   Whitespace         :  -w trailing
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  -t ([0-9]|[1-9][0-9]|100)
+   File               :  <n/a>
 
 
-Test Case 72 		(Key = 4.1.5.3.6.1.)
+Test Case 55 		(Key = 5.1.6.3.0.)
    Skip Lines         :  (no-s)
    Remove Empty Lines :  -x
    Replace Mode       :  (no-r)
-   Whitespace         :  -w all
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  (no-mode)
+   File               :  <n/a>
 
 
-Test Case 73 		(Key = 4.1.5.6.6.1.)
-   Skip Lines         :  (no-s)
-   Remove Empty Lines :  -x
-   Replace Mode       :  (no-r)
-   Whitespace         :  (no-w)
-   Truncate           :  (no-t)
-   File               :  Found
-
-
-Test Case 74 		(Key = 4.2.1.1.6.1.)
+Test Case 56 		(Key = 5.2.1.1.0.)
    Skip Lines         :  (no-s)
    Remove Empty Lines :  (no-x)
    Replace Mode       :  -r old new
-   Whitespace         :  -w leading
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  -w (leading|trailing|all)
+   File               :  <n/a>
 
 
-Test Case 75 		(Key = 4.2.1.2.6.1.)
+Test Case 57 		(Key = 5.2.1.2.0.)
    Skip Lines         :  (no-s)
    Remove Empty Lines :  (no-x)
    Replace Mode       :  -r old new
-   Whitespace         :  -w trailing
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  -t ([0-9]|[1-9][0-9]|100)
+   File               :  <n/a>
 
 
-Test Case 76 		(Key = 4.2.1.3.6.1.)
+Test Case 58 		(Key = 5.2.1.3.0.)
    Skip Lines         :  (no-s)
    Remove Empty Lines :  (no-x)
    Replace Mode       :  -r old new
-   Whitespace         :  -w all
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  (no-mode)
+   File               :  <n/a>
 
 
-Test Case 77 		(Key = 4.2.1.6.6.1.)
-   Skip Lines         :  (no-s)
-   Remove Empty Lines :  (no-x)
-   Replace Mode       :  -r old new
-   Whitespace         :  (no-w)
-   Truncate           :  (no-t)
-   File               :  Found
-
-
-Test Case 78 		(Key = 4.2.2.1.6.1.)
+Test Case 59 		(Key = 5.2.2.1.0.)
    Skip Lines         :  (no-s)
    Remove Empty Lines :  (no-x)
    Replace Mode       :  -g -r old new
-   Whitespace         :  -w leading
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  -w (leading|trailing|all)
+   File               :  <n/a>
 
 
-Test Case 79 		(Key = 4.2.2.2.6.1.)
+Test Case 60 		(Key = 5.2.2.2.0.)
    Skip Lines         :  (no-s)
    Remove Empty Lines :  (no-x)
    Replace Mode       :  -g -r old new
-   Whitespace         :  -w trailing
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  -t ([0-9]|[1-9][0-9]|100)
+   File               :  <n/a>
 
 
-Test Case 80 		(Key = 4.2.2.3.6.1.)
+Test Case 61 		(Key = 5.2.2.3.0.)
    Skip Lines         :  (no-s)
    Remove Empty Lines :  (no-x)
    Replace Mode       :  -g -r old new
-   Whitespace         :  -w all
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  (no-mode)
+   File               :  <n/a>
 
 
-Test Case 81 		(Key = 4.2.2.6.6.1.)
-   Skip Lines         :  (no-s)
-   Remove Empty Lines :  (no-x)
-   Replace Mode       :  -g -r old new
-   Whitespace         :  (no-w)
-   Truncate           :  (no-t)
-   File               :  Found
-
-
-Test Case 82 		(Key = 4.2.5.1.6.1.)
+Test Case 62 		(Key = 5.2.6.1.0.)
    Skip Lines         :  (no-s)
    Remove Empty Lines :  (no-x)
    Replace Mode       :  (no-r)
-   Whitespace         :  -w leading
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  -w (leading|trailing|all)
+   File               :  <n/a>
 
 
-Test Case 83 		(Key = 4.2.5.2.6.1.)
+Test Case 63 		(Key = 5.2.6.2.0.)
    Skip Lines         :  (no-s)
    Remove Empty Lines :  (no-x)
    Replace Mode       :  (no-r)
-   Whitespace         :  -w trailing
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  -t ([0-9]|[1-9][0-9]|100)
+   File               :  <n/a>
 
 
-Test Case 84 		(Key = 4.2.5.3.6.1.)
+Test Case 64 		(Key = 5.2.6.3.0.)
    Skip Lines         :  (no-s)
    Remove Empty Lines :  (no-x)
    Replace Mode       :  (no-r)
-   Whitespace         :  -w all
-   Truncate           :  (no-t)
-   File               :  Found
-
-
-Test Case 85 		(Key = 4.2.5.6.6.1.)
-   Skip Lines         :  (no-s)
-   Remove Empty Lines :  (no-x)
-   Replace Mode       :  (no-r)
-   Whitespace         :  (no-w)
-   Truncate           :  (no-t)
-   File               :  Found
+   W and T Mode       :  (no-mode)
+   File               :  <n/a>
 
