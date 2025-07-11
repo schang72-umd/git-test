@@ -39,434 +39,496 @@ Test Case 10 		<error>
    File :  (no-file)
 
 
-Test Case 11 		(Key = 1.1.1.1.0.)
+Test Case 11 		<single>
+   Content :  ""
+
+
+Test Case 12 		<single>
+   Content :  "\n"
+
+
+Test Case 13 		(Key = 1.1.1.1.0.0.)
    Skip Lines         :  -s 0
    Remove Empty Lines :  -x
    Replace Mode       :  -r old new
    W and T Mode       :  -w (leading|trailing|all)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 12 		(Key = 1.1.1.2.0.)
+Test Case 14 		(Key = 1.1.1.2.0.0.)
    Skip Lines         :  -s 0
    Remove Empty Lines :  -x
    Replace Mode       :  -r old new
    W and T Mode       :  -t ([0-9]|[1-9][0-9]|100)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 13 		(Key = 1.1.1.3.0.)
+Test Case 15 		(Key = 1.1.1.3.0.0.)
    Skip Lines         :  -s 0
    Remove Empty Lines :  -x
    Replace Mode       :  -r old new
    W and T Mode       :  (no-mode)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 14 		(Key = 1.1.2.1.0.)
+Test Case 16 		(Key = 1.1.2.1.0.0.)
    Skip Lines         :  -s 0
    Remove Empty Lines :  -x
    Replace Mode       :  -g -r old new
    W and T Mode       :  -w (leading|trailing|all)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 15 		(Key = 1.1.2.2.0.)
+Test Case 17 		(Key = 1.1.2.2.0.0.)
    Skip Lines         :  -s 0
    Remove Empty Lines :  -x
    Replace Mode       :  -g -r old new
    W and T Mode       :  -t ([0-9]|[1-9][0-9]|100)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 16 		(Key = 1.1.2.3.0.)
+Test Case 18 		(Key = 1.1.2.3.0.0.)
    Skip Lines         :  -s 0
    Remove Empty Lines :  -x
    Replace Mode       :  -g -r old new
    W and T Mode       :  (no-mode)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 17 		(Key = 1.1.6.1.0.)
+Test Case 19 		(Key = 1.1.6.1.0.0.)
    Skip Lines         :  -s 0
    Remove Empty Lines :  -x
    Replace Mode       :  (no-r)
    W and T Mode       :  -w (leading|trailing|all)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 18 		(Key = 1.1.6.2.0.)
+Test Case 20 		(Key = 1.1.6.2.0.0.)
    Skip Lines         :  -s 0
    Remove Empty Lines :  -x
    Replace Mode       :  (no-r)
    W and T Mode       :  -t ([0-9]|[1-9][0-9]|100)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 19 		(Key = 1.1.6.3.0.)
+Test Case 21 		(Key = 1.1.6.3.0.0.)
    Skip Lines         :  -s 0
    Remove Empty Lines :  -x
    Replace Mode       :  (no-r)
    W and T Mode       :  (no-mode)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 20 		(Key = 1.2.1.1.0.)
+Test Case 22 		(Key = 1.2.1.1.0.0.)
    Skip Lines         :  -s 0
    Remove Empty Lines :  (no-x)
    Replace Mode       :  -r old new
    W and T Mode       :  -w (leading|trailing|all)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 21 		(Key = 1.2.1.2.0.)
+Test Case 23 		(Key = 1.2.1.2.0.0.)
    Skip Lines         :  -s 0
    Remove Empty Lines :  (no-x)
    Replace Mode       :  -r old new
    W and T Mode       :  -t ([0-9]|[1-9][0-9]|100)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 22 		(Key = 1.2.1.3.0.)
+Test Case 24 		(Key = 1.2.1.3.0.0.)
    Skip Lines         :  -s 0
    Remove Empty Lines :  (no-x)
    Replace Mode       :  -r old new
    W and T Mode       :  (no-mode)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 23 		(Key = 1.2.2.1.0.)
+Test Case 25 		(Key = 1.2.2.1.0.0.)
    Skip Lines         :  -s 0
    Remove Empty Lines :  (no-x)
    Replace Mode       :  -g -r old new
    W and T Mode       :  -w (leading|trailing|all)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 24 		(Key = 1.2.2.2.0.)
+Test Case 26 		(Key = 1.2.2.2.0.0.)
    Skip Lines         :  -s 0
    Remove Empty Lines :  (no-x)
    Replace Mode       :  -g -r old new
    W and T Mode       :  -t ([0-9]|[1-9][0-9]|100)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 25 		(Key = 1.2.2.3.0.)
+Test Case 27 		(Key = 1.2.2.3.0.0.)
    Skip Lines         :  -s 0
    Remove Empty Lines :  (no-x)
    Replace Mode       :  -g -r old new
    W and T Mode       :  (no-mode)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 26 		(Key = 1.2.6.1.0.)
+Test Case 28 		(Key = 1.2.6.1.0.0.)
    Skip Lines         :  -s 0
    Remove Empty Lines :  (no-x)
    Replace Mode       :  (no-r)
    W and T Mode       :  -w (leading|trailing|all)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 27 		(Key = 1.2.6.2.0.)
+Test Case 29 		(Key = 1.2.6.2.0.0.)
    Skip Lines         :  -s 0
    Remove Empty Lines :  (no-x)
    Replace Mode       :  (no-r)
    W and T Mode       :  -t ([0-9]|[1-9][0-9]|100)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 28 		(Key = 1.2.6.3.0.)
+Test Case 30 		(Key = 1.2.6.3.0.0.)
    Skip Lines         :  -s 0
    Remove Empty Lines :  (no-x)
    Replace Mode       :  (no-r)
    W and T Mode       :  (no-mode)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 29 		(Key = 2.1.1.1.0.)
+Test Case 31 		(Key = 2.1.1.1.0.0.)
    Skip Lines         :  -s 1
    Remove Empty Lines :  -x
    Replace Mode       :  -r old new
    W and T Mode       :  -w (leading|trailing|all)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 30 		(Key = 2.1.1.2.0.)
+Test Case 32 		(Key = 2.1.1.2.0.0.)
    Skip Lines         :  -s 1
    Remove Empty Lines :  -x
    Replace Mode       :  -r old new
    W and T Mode       :  -t ([0-9]|[1-9][0-9]|100)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 31 		(Key = 2.1.1.3.0.)
+Test Case 33 		(Key = 2.1.1.3.0.0.)
    Skip Lines         :  -s 1
    Remove Empty Lines :  -x
    Replace Mode       :  -r old new
    W and T Mode       :  (no-mode)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 32 		(Key = 2.1.2.1.0.)
+Test Case 34 		(Key = 2.1.2.1.0.0.)
    Skip Lines         :  -s 1
    Remove Empty Lines :  -x
    Replace Mode       :  -g -r old new
    W and T Mode       :  -w (leading|trailing|all)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 33 		(Key = 2.1.2.2.0.)
+Test Case 35 		(Key = 2.1.2.2.0.0.)
    Skip Lines         :  -s 1
    Remove Empty Lines :  -x
    Replace Mode       :  -g -r old new
    W and T Mode       :  -t ([0-9]|[1-9][0-9]|100)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 34 		(Key = 2.1.2.3.0.)
+Test Case 36 		(Key = 2.1.2.3.0.0.)
    Skip Lines         :  -s 1
    Remove Empty Lines :  -x
    Replace Mode       :  -g -r old new
    W and T Mode       :  (no-mode)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 35 		(Key = 2.1.6.1.0.)
+Test Case 37 		(Key = 2.1.6.1.0.0.)
    Skip Lines         :  -s 1
    Remove Empty Lines :  -x
    Replace Mode       :  (no-r)
    W and T Mode       :  -w (leading|trailing|all)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 36 		(Key = 2.1.6.2.0.)
+Test Case 38 		(Key = 2.1.6.2.0.0.)
    Skip Lines         :  -s 1
    Remove Empty Lines :  -x
    Replace Mode       :  (no-r)
    W and T Mode       :  -t ([0-9]|[1-9][0-9]|100)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 37 		(Key = 2.1.6.3.0.)
+Test Case 39 		(Key = 2.1.6.3.0.0.)
    Skip Lines         :  -s 1
    Remove Empty Lines :  -x
    Replace Mode       :  (no-r)
    W and T Mode       :  (no-mode)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 38 		(Key = 2.2.1.1.0.)
+Test Case 40 		(Key = 2.2.1.1.0.0.)
    Skip Lines         :  -s 1
    Remove Empty Lines :  (no-x)
    Replace Mode       :  -r old new
    W and T Mode       :  -w (leading|trailing|all)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 39 		(Key = 2.2.1.2.0.)
+Test Case 41 		(Key = 2.2.1.2.0.0.)
    Skip Lines         :  -s 1
    Remove Empty Lines :  (no-x)
    Replace Mode       :  -r old new
    W and T Mode       :  -t ([0-9]|[1-9][0-9]|100)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 40 		(Key = 2.2.1.3.0.)
+Test Case 42 		(Key = 2.2.1.3.0.0.)
    Skip Lines         :  -s 1
    Remove Empty Lines :  (no-x)
    Replace Mode       :  -r old new
    W and T Mode       :  (no-mode)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 41 		(Key = 2.2.2.1.0.)
+Test Case 43 		(Key = 2.2.2.1.0.0.)
    Skip Lines         :  -s 1
    Remove Empty Lines :  (no-x)
    Replace Mode       :  -g -r old new
    W and T Mode       :  -w (leading|trailing|all)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 42 		(Key = 2.2.2.2.0.)
+Test Case 44 		(Key = 2.2.2.2.0.0.)
    Skip Lines         :  -s 1
    Remove Empty Lines :  (no-x)
    Replace Mode       :  -g -r old new
    W and T Mode       :  -t ([0-9]|[1-9][0-9]|100)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 43 		(Key = 2.2.2.3.0.)
+Test Case 45 		(Key = 2.2.2.3.0.0.)
    Skip Lines         :  -s 1
    Remove Empty Lines :  (no-x)
    Replace Mode       :  -g -r old new
    W and T Mode       :  (no-mode)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 44 		(Key = 2.2.6.1.0.)
+Test Case 46 		(Key = 2.2.6.1.0.0.)
    Skip Lines         :  -s 1
    Remove Empty Lines :  (no-x)
    Replace Mode       :  (no-r)
    W and T Mode       :  -w (leading|trailing|all)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 45 		(Key = 2.2.6.2.0.)
+Test Case 47 		(Key = 2.2.6.2.0.0.)
    Skip Lines         :  -s 1
    Remove Empty Lines :  (no-x)
    Replace Mode       :  (no-r)
    W and T Mode       :  -t ([0-9]|[1-9][0-9]|100)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 46 		(Key = 2.2.6.3.0.)
+Test Case 48 		(Key = 2.2.6.3.0.0.)
    Skip Lines         :  -s 1
    Remove Empty Lines :  (no-x)
    Replace Mode       :  (no-r)
    W and T Mode       :  (no-mode)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 47 		(Key = 5.1.1.1.0.)
+Test Case 49 		(Key = 5.1.1.1.0.0.)
    Skip Lines         :  (no-s)
    Remove Empty Lines :  -x
    Replace Mode       :  -r old new
    W and T Mode       :  -w (leading|trailing|all)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 48 		(Key = 5.1.1.2.0.)
+Test Case 50 		(Key = 5.1.1.2.0.0.)
    Skip Lines         :  (no-s)
    Remove Empty Lines :  -x
    Replace Mode       :  -r old new
    W and T Mode       :  -t ([0-9]|[1-9][0-9]|100)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 49 		(Key = 5.1.1.3.0.)
+Test Case 51 		(Key = 5.1.1.3.0.0.)
    Skip Lines         :  (no-s)
    Remove Empty Lines :  -x
    Replace Mode       :  -r old new
    W and T Mode       :  (no-mode)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 50 		(Key = 5.1.2.1.0.)
+Test Case 52 		(Key = 5.1.2.1.0.0.)
    Skip Lines         :  (no-s)
    Remove Empty Lines :  -x
    Replace Mode       :  -g -r old new
    W and T Mode       :  -w (leading|trailing|all)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 51 		(Key = 5.1.2.2.0.)
+Test Case 53 		(Key = 5.1.2.2.0.0.)
    Skip Lines         :  (no-s)
    Remove Empty Lines :  -x
    Replace Mode       :  -g -r old new
    W and T Mode       :  -t ([0-9]|[1-9][0-9]|100)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 52 		(Key = 5.1.2.3.0.)
+Test Case 54 		(Key = 5.1.2.3.0.0.)
    Skip Lines         :  (no-s)
    Remove Empty Lines :  -x
    Replace Mode       :  -g -r old new
    W and T Mode       :  (no-mode)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 53 		(Key = 5.1.6.1.0.)
+Test Case 55 		(Key = 5.1.6.1.0.0.)
    Skip Lines         :  (no-s)
    Remove Empty Lines :  -x
    Replace Mode       :  (no-r)
    W and T Mode       :  -w (leading|trailing|all)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 54 		(Key = 5.1.6.2.0.)
+Test Case 56 		(Key = 5.1.6.2.0.0.)
    Skip Lines         :  (no-s)
    Remove Empty Lines :  -x
    Replace Mode       :  (no-r)
    W and T Mode       :  -t ([0-9]|[1-9][0-9]|100)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 55 		(Key = 5.1.6.3.0.)
+Test Case 57 		(Key = 5.1.6.3.0.0.)
    Skip Lines         :  (no-s)
    Remove Empty Lines :  -x
    Replace Mode       :  (no-r)
    W and T Mode       :  (no-mode)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 56 		(Key = 5.2.1.1.0.)
+Test Case 58 		(Key = 5.2.1.1.0.0.)
    Skip Lines         :  (no-s)
    Remove Empty Lines :  (no-x)
    Replace Mode       :  -r old new
    W and T Mode       :  -w (leading|trailing|all)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 57 		(Key = 5.2.1.2.0.)
+Test Case 59 		(Key = 5.2.1.2.0.0.)
    Skip Lines         :  (no-s)
    Remove Empty Lines :  (no-x)
    Replace Mode       :  -r old new
    W and T Mode       :  -t ([0-9]|[1-9][0-9]|100)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 58 		(Key = 5.2.1.3.0.)
+Test Case 60 		(Key = 5.2.1.3.0.0.)
    Skip Lines         :  (no-s)
    Remove Empty Lines :  (no-x)
    Replace Mode       :  -r old new
    W and T Mode       :  (no-mode)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 59 		(Key = 5.2.2.1.0.)
+Test Case 61 		(Key = 5.2.2.1.0.0.)
    Skip Lines         :  (no-s)
    Remove Empty Lines :  (no-x)
    Replace Mode       :  -g -r old new
    W and T Mode       :  -w (leading|trailing|all)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 60 		(Key = 5.2.2.2.0.)
+Test Case 62 		(Key = 5.2.2.2.0.0.)
    Skip Lines         :  (no-s)
    Remove Empty Lines :  (no-x)
    Replace Mode       :  -g -r old new
    W and T Mode       :  -t ([0-9]|[1-9][0-9]|100)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 61 		(Key = 5.2.2.3.0.)
+Test Case 63 		(Key = 5.2.2.3.0.0.)
    Skip Lines         :  (no-s)
    Remove Empty Lines :  (no-x)
    Replace Mode       :  -g -r old new
    W and T Mode       :  (no-mode)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 62 		(Key = 5.2.6.1.0.)
+Test Case 64 		(Key = 5.2.6.1.0.0.)
    Skip Lines         :  (no-s)
    Remove Empty Lines :  (no-x)
    Replace Mode       :  (no-r)
    W and T Mode       :  -w (leading|trailing|all)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 63 		(Key = 5.2.6.2.0.)
+Test Case 65 		(Key = 5.2.6.2.0.0.)
    Skip Lines         :  (no-s)
    Remove Empty Lines :  (no-x)
    Replace Mode       :  (no-r)
    W and T Mode       :  -t ([0-9]|[1-9][0-9]|100)
    File               :  <n/a>
+   Content            :  <n/a>
 
 
-Test Case 64 		(Key = 5.2.6.3.0.)
+Test Case 66 		(Key = 5.2.6.3.0.0.)
    Skip Lines         :  (no-s)
    Remove Empty Lines :  (no-x)
    Replace Mode       :  (no-r)
    W and T Mode       :  (no-mode)
    File               :  <n/a>
+   Content            :  <n/a>
 

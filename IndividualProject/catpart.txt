@@ -56,6 +56,12 @@ File:
     (no-file).               [error]      # omitted filename entirely
 
 # --------- File Content (input.txt) ---------
-#Content:
-#    "".                        [property EmptyFile]       # empty file is allowed
+Content:
+    "".                        [single]       # empty file is allowed
+    
+    # any non‐empty content *ending* in a newline => OK
+    #.+\n.                   [property GoodTermination]
+
+    # any non‐empty content *not* ending in newline => error
+    "\n".                     [single]                   # GoodTErmination
 
