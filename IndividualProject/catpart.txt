@@ -49,6 +49,10 @@ W and T Mode:
     -t.                          [error]                # `-t` missing its arg
     -t \S+.                      [error]                # `-t` with any non-whitespace token
 
+# Any other unrecognized “-X” option → error
+Other Options:
+    -[^ \t\r\n]+.                   [error]
+
 
 # --------- Input File Parameter -----------
 File:
