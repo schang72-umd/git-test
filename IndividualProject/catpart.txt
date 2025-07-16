@@ -1,6 +1,6 @@
-# transformtxt.tsl – TSL for the “transformtxt” command-line utility
+# TSL Description for the "transformtxt" command-line utility
 
-# -------- Skip-Lines Option --------
+# ----- Skip-Lines Option -----
 Skip Lines:
     -s 0. [property SkipEven]       # skip every even line
     -s 1. [property SkipOdd]        # skip every odd line
@@ -15,12 +15,12 @@ Skip Lines:
 
     (no-s).                         # no skip option
 
-# ---- Remove Empty-Lines Option ----
+# ----- Remove Empty-Lines Option -----
 Remove Empty Lines:
     -x. [property RemoveEmptyLines]       # remove all empty lines
     (no-x).                               # leave empty lines intact
 
-# --------- Replace Modes -----------
+# ----- Replace Modes -----
 Replace Mode:
     -r old new. [property ReplaceFirst]   # replace first occurrence of 'old' with 'new'
     -g -r old new. [property ReplaceAll]  # replace all occurrences (global replace)
@@ -32,7 +32,7 @@ Replace Mode:
     (no-r).
 
 
-# --- Whitespace vs Truncate (mutually exclusive) ---
+# ----- Whitespace vs Truncate (Note: make mutually exclusive) -----
 W and T Mode:
     #-w leading.                  [property TrimLeading]
     #-w trailing.                 [property TrimTrailing]
@@ -44,22 +44,22 @@ W and T Mode:
     (no-mode).                       [property NoMode]       # neither option
 
     # Error cases 
-    -w.                          [error]                # `-w` missing its arg
+    -w.                          [error]                # `-w` missing its parameter
     -w \S+.                      [error]                # `-w` with any non-whitespace token
-    -t.                          [error]                # `-t` missing its arg
+    -t.                          [error]                # `-t` missing its parameter
     -t \S+.                      [error]                # `-t` with any non-whitespace token
 
-# Any other unrecognized “-X” option → error
+# ----- Any other unrecognized “-X” option → error -----
 Other Options:
     -[^ \t\r\n]+.                   [error]
 
 
-# --------- Input File Parameter -----------
+# ----- Input File Parameter -----
 File:
     #^input\.txt$               [property FileOK]    # correct filename
     (no-file).               [error]      # omitted filename entirely
 
-# --------- File Content (input.txt) ---------
+# ----- File Content (input.txt) -----
 Content:
     "".                        [single]       # empty file is allowed
     
@@ -67,5 +67,5 @@ Content:
     #.+\n.                   [property GoodTermination]
 
     # any non‐empty content *not* ending in newline => error
-    "\n".                     [single]                   # GoodTErmination
+    (no-EOL-at-end).                     [error]                 
 

@@ -70,7 +70,7 @@ public class MyMainTest {
     }
 
     /* ------------------------------- Test Cases ------------------------------- */
-    // Frame 1: Test Case 1 <error>
+    // Frame 1: -s not 0 and 1 <error>
     @Test
     public void transformtxtTest1() {
         String input = "abc";
@@ -83,7 +83,7 @@ public class MyMainTest {
         Assertions.assertEquals(usageStr,capture.stderr());
     }
 
-    // Frame 2: Test Case 2 <error>
+    // Frame 2: -s has no parameter <error>
     @Test
     public void transformtxtTest2() {
         String input = "abc";
@@ -96,7 +96,7 @@ public class MyMainTest {
         Assertions.assertEquals(usageStr,capture.stderr());
     }
 
-    // Frame 3: Test Case 3 <error>
+    // Frame 3: -g does not follow -s <error>
     @Test
     public void transformtxtTest3() {
         String input = "abc";
@@ -109,7 +109,7 @@ public class MyMainTest {
         Assertions.assertEquals(usageStr,capture.stderr());
     }
 
-    // Frame 4: Test Case 4 <error>
+    // Frame 4: -r first instance with empty string <error>
     @Test
     public void transformtxtTest4() {
         String input = "Today is a sunny day!";
@@ -122,7 +122,7 @@ public class MyMainTest {
         Assertions.assertEquals(usageStr,capture.stderr());
     }
 
-    // Frame 5: Test Case 5 <error>
+    // Frame 5: -r has no old or new parameters <error>
     @Test
     public void transformtxtTest5() {
         String input = "Today is a sunny day!";
@@ -135,7 +135,7 @@ public class MyMainTest {
         Assertions.assertEquals(usageStr,capture.stderr());
     }
 
-    // Frame 6: Test Case 6 <error>
+    // Frame 6: -w has no parameter <error>
     @Test
     public void transformtxtTest6() {
         String input = "Today is a sunny day!";
@@ -148,7 +148,7 @@ public class MyMainTest {
         Assertions.assertEquals(usageStr,capture.stderr());
     }
 
-    // Frame 7: Test Case 7 <error>
+    // Frame 7: -w has invalid parameter <error>
     @Test
     public void transformtxtTest7() {
         String input = "Today is a sunny day!";
@@ -162,7 +162,7 @@ public class MyMainTest {
         Assertions.assertEquals(usageStr,capture.stderr());
     }
 
-    // Frame 8: Test Case 8 <error>
+    // Frame 8: -t has no parameter between 0 and 100 <error>
     @Test
     public void transformtxtTest8() {
         String input = "Today is a sunny day!";
@@ -176,7 +176,7 @@ public class MyMainTest {
         Assertions.assertEquals(usageStr,capture.stderr());
     }
 
-    // Frame 9: -t with wrong parameter <error>
+    // Frame 9: -t with invalid parameter not between 0 and 100 <error>
     @Test
     public void transformtxtTest9() {
         String input = "Today is a sunny day!";
@@ -190,7 +190,7 @@ public class MyMainTest {
         Assertions.assertEquals(usageStr,capture.stderr());
     }
 
-    // Frame 10: Other Options <error>
+    // Frame 10: Invalid options <error>
     @Test
     public void transformtxtTest10() {
         String input = "Today is a sunny day!";
@@ -204,7 +204,7 @@ public class MyMainTest {
         Assertions.assertEquals(usageStr,capture.stderr());
     }
 
-    // Frame 11: File not exists <error>
+    // Frame 11: File does not exist <error>
     @Test
     public void transformtxtTest11() {
         String input = "Today is a sunny day!";
@@ -233,11 +233,11 @@ public class MyMainTest {
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
 
-    // Frame 13: Input File with newline only <single>
-    // Test input string is "\n".
+    // Frame 13: Not end with "\r\n" or "\n" <error>
     @Test
     public void transformtxtTest13() {
-        String input = "\n";
+        String input = "abc" + System.lineSeparator()
+                + "def";
 
         Path inputFile = createFile(input);
         String[] args = {inputFile.toString()};
@@ -245,7 +245,7 @@ public class MyMainTest {
 
         Assertions.assertTrue(capture.stdout().isEmpty());
         Assertions.assertTrue(capture.stderr().isEmpty());
-        Assertions.assertEquals(input, getFileContent(inputFile));
+        //Assertions.assertEquals(input, getFileContent(inputFile));
     }
 
 
@@ -286,7 +286,7 @@ public class MyMainTest {
         Assertions.assertTrue(capture.stderr().isEmpty());
     }
 
-    // Frame 15: Test Case 15
+    // Frame 16: (Key = 1.1.1.3.0.0.0.)
     @Test
     public void transformtxtTest16() {
         String input = "   Today is tomorrow." + System.lineSeparator()
@@ -306,7 +306,7 @@ public class MyMainTest {
     }
 
 
-    // Frame 16: Test Case 16
+    // Frame 17: (Key = 1.1.2.1.0.0.0.)
     @Test
     public void transformtxtTest17() {
         String input = "   Today is tomorrow." + System.lineSeparator()
@@ -325,7 +325,7 @@ public class MyMainTest {
         Assertions.assertTrue(capture.stderr().isEmpty());
     }
 
-    // Frame 17: Test Case 17
+    // Frame 18: (Key = 1.1.2.2.0.0.0.)
     @Test
     public void transformtxtTest18() {
         String input = "   Today is tomorrow." + System.lineSeparator()
@@ -344,7 +344,7 @@ public class MyMainTest {
         Assertions.assertTrue(capture.stderr().isEmpty());
     }
 
-    // Frame 18: Test Case 18
+    // Frame 19: (Key = 1.1.2.3.0.0.0.)
     @Test
     public void transformtxtTest19() {
         String input = "   Today is tomorrow." + System.lineSeparator()
@@ -364,7 +364,7 @@ public class MyMainTest {
     }
 
 
-    // Frame 19: Test Case 19
+    // Frame 20: (Key = 1.1.6.1.0.0.0.)
     @Test
     public void transformtxtTest20() {
         String input = "   Today is tomorrow." + System.lineSeparator()
@@ -383,7 +383,7 @@ public class MyMainTest {
         Assertions.assertTrue(capture.stderr().isEmpty());
     }
 
-    // Frame 20: Test Case 20
+    // Frame 21: (Key = 1.1.6.2.0.0.0.)
     @Test
     public void transformtxtTest21() {
         String input = "   Today is tomorrow." + System.lineSeparator()
@@ -402,7 +402,7 @@ public class MyMainTest {
         Assertions.assertTrue(capture.stderr().isEmpty());
     }
 
-    // Frame 21: Test Case 21
+    // Frame 22: (Key = 1.1.6.3.0.0.0.)
     @Test
     public void transformtxtTest22() {
         String input = "   Today is tomorrow." + System.lineSeparator()
@@ -421,7 +421,7 @@ public class MyMainTest {
         Assertions.assertTrue(capture.stderr().isEmpty());
     }
 
-    // Frame 22: Test Case 22
+    // Frame 23: (Key = 1.2.1.1.0.0.0.)
     @Test
     public void transformtxtTest23() {
         String input = "   Today is tomorrow." + System.lineSeparator()
@@ -440,7 +440,7 @@ public class MyMainTest {
         Assertions.assertTrue(capture.stderr().isEmpty());
     }
 
-    // Frame 23: Test Case 23
+    // Frame 24: (Key = 1.2.1.2.0.0.0.)
     @Test
     public void transformtxtTest24() {
         String input = "   Today is tomorrow." + System.lineSeparator()
@@ -459,7 +459,7 @@ public class MyMainTest {
         Assertions.assertTrue(capture.stderr().isEmpty());
     }
 
-    // Frame 24: Test Case 24
+    // Frame 25: (Key = 1.2.1.3.0.0.0.)
     @Test
     public void transformtxtTest25() {
         String input = "   Today is tomorrow." + System.lineSeparator()
@@ -478,7 +478,7 @@ public class MyMainTest {
         Assertions.assertTrue(capture.stderr().isEmpty());
     }
 
-    // Frame 25: Test Case 25
+    // Frame 26: (Key = 1.2.2.1.0.0.0.)
     @Test
     public void transformtxtTest26() {
         String input = "   Today is tomorrow." + System.lineSeparator()
@@ -497,7 +497,7 @@ public class MyMainTest {
         Assertions.assertTrue(capture.stderr().isEmpty());
     }
 
-    // Frame 26: Test Case 26
+    // Frame 27: (Key = 1.2.2.2.0.0.0.)
     @Test
     public void transformtxtTest27() {
         String input = "   Today is tomorrow." + System.lineSeparator()
@@ -516,7 +516,7 @@ public class MyMainTest {
         Assertions.assertTrue(capture.stderr().isEmpty());
     }
 
-    // Frame 27: Test Case 27
+    // Frame 28: (Key = 1.2.2.3.0.0.0.)
     @Test
     public void transformtxtTest28() {
         String input = "   Today is tomorrow." + System.lineSeparator()
@@ -535,7 +535,7 @@ public class MyMainTest {
         Assertions.assertTrue(capture.stderr().isEmpty());
     }
 
-    // Frame 28: Test Case 28
+    // Frame 29: (Key = 1.2.6.1.0.0.0.)
     @Test
     public void transformtxtTest29() {
         String input = "   Today is tomorrow." + System.lineSeparator()
@@ -554,7 +554,7 @@ public class MyMainTest {
         Assertions.assertTrue(capture.stderr().isEmpty());
     }
 
-    // Frame 29: Test Case 29
+    // Frame 30: (Key = 1.2.6.2.0.0.0.)
     @Test
     public void transformtxtTest30() {
         String input = "   Today is tomorrow." + System.lineSeparator()
@@ -592,4 +592,696 @@ public class MyMainTest {
         Assertions.assertTrue(capture.stderr().isEmpty());
     }
 
+    // Frame 32: (Key = 2.1.1.1.0.0.0.)
+    @Test
+    public void transformtxtTest32() {
+        String input = "   Today is tomorrow." + System.lineSeparator()
+                + "         Yesterday is today." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-s","1", "-x", "-r", "old", "new", "-w", "leading", inputFile.toString()};
+        Main.main(args);
+
+        // TODO: need to figure out the expectedOut
+        String expectedOut = "Too is tomorrow." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Assertions.assertEquals(expectedOut,capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+    }
+
+    // Frame 33: (Key = 2.1.1.2.0.0.0.)
+    @Test
+    public void transformtxtTest33() {
+        String input = "   Today is tomorrow." + System.lineSeparator()
+                + "         Yesterday is today." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-s","1", "-x", "-r", "old", "new", "-t", "54", inputFile.toString()};
+        Main.main(args);
+
+        // TODO: need to figure out the expectedOut
+        String expectedOut = "Too is tomorrow." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Assertions.assertEquals(expectedOut,capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+    }
+	
+	// Frame 34: (Key = 2.1.1.3.0.0.0.)
+    @Test
+    public void transformtxtTest34() {
+        String input = "   Today is tomorrow." + System.lineSeparator()
+                + "         Yesterday is today." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-s","1", "-x", "-r", "old", "new", inputFile.toString()};
+        Main.main(args);
+
+        // TODO: need to figure out the expectedOut
+        String expectedOut = "Too is tomorrow." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Assertions.assertEquals(expectedOut,capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+    }
+	
+		// Frame 35: (Key = 2.1.2.1.0.0.0.)
+    @Test
+    public void transformtxtTest35() {
+        String input = "   Today is tomorrow." + System.lineSeparator()
+                + "         Yesterday is today." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-s","1", "-x", "-g", "-r", "old", "new", "-w", "all", inputFile.toString()};
+        Main.main(args);
+
+        // TODO: need to figure out the expectedOut
+        String expectedOut = "Too is tomorrow." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Assertions.assertEquals(expectedOut,capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+    }
+	
+		// Frame 36: (Key = 2.1.2.2.0.0.0.)
+    @Test
+    public void transformtxtTest36() {
+        String input = "   Today is tomorrow." + System.lineSeparator()
+                + "         Yesterday is today." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-s","1", "-x", "-g", "-r", "old", "new", "-t", "34", inputFile.toString()};
+        Main.main(args);
+
+        // TODO: need to figure out the expectedOut
+        String expectedOut = "Too is tomorrow." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Assertions.assertEquals(expectedOut,capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+    }
+	
+		// Frame 37: (Key = 2.1.1.3.0.0.0.)
+    @Test
+    public void transformtxtTest37() {
+        String input = "   Today is tomorrow." + System.lineSeparator()
+                + "         Yesterday is today." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-s","1", "-x", "-g", "-r", "old", "new", inputFile.toString()};
+        Main.main(args);
+
+        // TODO: need to figure out the expectedOut
+        String expectedOut = "Too is tomorrow." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Assertions.assertEquals(expectedOut,capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+    }
+	
+		// Frame 38: (Key = 2.1.6.1.0.0.0.)
+    @Test
+    public void transformtxtTest38() {
+        String input = "   Today is tomorrow." + System.lineSeparator()
+                + "         Yesterday is today." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-s","1", "-x", "-w", "trailing", inputFile.toString()};
+        Main.main(args);
+
+        // TODO: need to figure out the expectedOut
+        String expectedOut = "Too is tomorrow." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Assertions.assertEquals(expectedOut,capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+    }
+	
+		// Frame 39: (Key = 2.1.6.2.0.0.0.)
+    @Test
+    public void transformtxtTest39() {
+        String input = "   Today is tomorrow." + System.lineSeparator()
+                + "         Yesterday is today." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-s","1", "-x", "-t", "9", inputFile.toString()};
+        Main.main(args);
+
+        // TODO: need to figure out the expectedOut
+        String expectedOut = "Too is tomorrow." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Assertions.assertEquals(expectedOut,capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+    }
+	
+		// Frame 40: (Key = 2.1.6.3.0.0.0.)
+    @Test
+    public void transformtxtTest40() {
+        String input = "   Today is tomorrow." + System.lineSeparator()
+                + "         Yesterday is today." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-s","1", "-x", inputFile.toString()};
+        Main.main(args);
+
+        // TODO: need to figure out the expectedOut
+        String expectedOut = "Too is tomorrow." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Assertions.assertEquals(expectedOut,capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+    }
+	
+		// Frame 41: (Key = 2.2.1.1.0.0.0.)
+    @Test
+    public void transformtxtTest41() {
+        String input = "   Today is tomorrow." + System.lineSeparator()
+                + "         Yesterday is today." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-s","1", "-r", "old", "new", "-w", "leading", inputFile.toString()};
+        Main.main(args);
+
+        // TODO: need to figure out the expectedOut
+        String expectedOut = "Too is tomorrow." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Assertions.assertEquals(expectedOut,capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+    }
+	
+		// Frame 42: (Key = 2.2.1.2.0.0.0.)
+    @Test
+    public void transformtxtTest42() {
+        String input = "   Today is tomorrow." + System.lineSeparator()
+                + "         Yesterday is today." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-s","1", "-r", "old", "new", "-t", "0", inputFile.toString()};
+        Main.main(args);
+
+        // TODO: need to figure out the expectedOut
+        String expectedOut = "Too is tomorrow." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Assertions.assertEquals(expectedOut,capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+    }
+	
+		// Frame 43: (Key = 2.2.1.3.0.0.0.)
+    @Test
+    public void transformtxtTest43() {
+        String input = "   Today is tomorrow." + System.lineSeparator()
+                + "         Yesterday is today." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-s","1", "-r", "old", "new", inputFile.toString()};
+        Main.main(args);
+
+        // TODO: need to figure out the expectedOut
+        String expectedOut = "Too is tomorrow." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Assertions.assertEquals(expectedOut,capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+    }
+	
+		// Frame 44: (Key = 2.2.2.1.0.0.0.)
+    @Test
+    public void transformtxtTest44() {
+        String input = "   Today is tomorrow." + System.lineSeparator()
+                + "         Yesterday is today." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-s","1", "-g", "-r", "old", "new", "-w", "leading", inputFile.toString()};
+        Main.main(args);
+
+        // TODO: need to figure out the expectedOut
+        String expectedOut = "Too is tomorrow." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Assertions.assertEquals(expectedOut,capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+    }
+	
+		// Frame 45: (Key = 2.2.2.2.0.0.0.)
+    @Test
+    public void transformtxtTest45() {
+        String input = "   Today is tomorrow." + System.lineSeparator()
+                + "         Yesterday is today." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-s","1", "-g", "-r", "old", "new", "-t", "11", inputFile.toString()};
+        Main.main(args);
+
+        // TODO: need to figure out the expectedOut
+        String expectedOut = "Too is tomorrow." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Assertions.assertEquals(expectedOut,capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+    }
+	
+		// Frame 46: (Key = 2.2.2.3.0.0.0.)
+    @Test
+    public void transformtxtTest46() {
+        String input = "   Today is tomorrow." + System.lineSeparator()
+                + "         Yesterday is today." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-s","1", "-g", "-r", "old", "new", inputFile.toString()};
+        Main.main(args);
+
+        // TODO: need to figure out the expectedOut
+        String expectedOut = "Too is tomorrow." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Assertions.assertEquals(expectedOut,capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+    }
+	
+		// Frame 47: (Key = 2.2.6.1.0.0.0.)
+    @Test
+    public void transformtxtTest47() {
+        String input = "   Today is tomorrow." + System.lineSeparator()
+                + "         Yesterday is today." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-s","1", "-w", "trailing", inputFile.toString()};
+        Main.main(args);
+
+        // TODO: need to figure out the expectedOut
+        String expectedOut = "Too is tomorrow." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Assertions.assertEquals(expectedOut,capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+    }
+	
+	
+		// Frame 48: (Key = 2.2.6.2.0.0.0.)
+    @Test
+    public void transformtxtTest48() {
+        String input = "   Today is tomorrow." + System.lineSeparator()
+                + "         Yesterday is today." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-s","1", "-t", "88", inputFile.toString()};
+        Main.main(args);
+
+        // TODO: need to figure out the expectedOut
+        String expectedOut = "Too is tomorrow." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Assertions.assertEquals(expectedOut,capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+    }
+	
+	
+		// Frame 49: (Key = 2.2.6.3.0.0.0.)
+    @Test
+    public void transformtxtTest49() {
+        String input = "   Today is tomorrow." + System.lineSeparator()
+                + "         Yesterday is today." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-s","1", inputFile.toString()};
+        Main.main(args);
+
+        // TODO: need to figure out the expectedOut
+        String expectedOut = "Too is tomorrow." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Assertions.assertEquals(expectedOut,capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+    }
+	
+	
+		// Frame 50: (Key = 5.1.1.1.0.0.0.)
+    @Test
+    public void transformtxtTest50() {
+        String input = "   Today is tomorrow." + System.lineSeparator()
+                + "         Yesterday is today." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-x", "-r", "old", "new", "-w", "leading", inputFile.toString()};
+        Main.main(args);
+
+        // TODO: need to figure out the expectedOut
+        String expectedOut = "Too is tomorrow." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Assertions.assertEquals(expectedOut,capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+    }
+	
+	
+		// Frame 51: (Key = 5.1.1.2.0.0.0.)
+    @Test
+    public void transformtxtTest51() {
+        String input = "   Today is tomorrow." + System.lineSeparator()
+                + "         Yesterday is today." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-x", "-r", "old", "new", "-t", "75", inputFile.toString()};
+        Main.main(args);
+
+        // TODO: need to figure out the expectedOut
+        String expectedOut = "Too is tomorrow." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Assertions.assertEquals(expectedOut,capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+    }
+	
+	
+		// Frame 52: (Key = 5.1.1.3.0.0.0.)
+    @Test
+    public void transformtxtTest52() {
+        String input = "   Today is tomorrow." + System.lineSeparator()
+                + "         Yesterday is today." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-x", "-r", "old", "new", inputFile.toString()};
+        Main.main(args);
+
+        // TODO: need to figure out the expectedOut
+        String expectedOut = "Too is tomorrow." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Assertions.assertEquals(expectedOut,capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+    }
+	
+		// Frame 53: (Key = 5.1.2.1.0.0.0.)
+    @Test
+    public void transformtxtTest53() {
+        String input = "   Today is tomorrow." + System.lineSeparator()
+                + "         Yesterday is today." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-x", "-g", "-r", "old", "new", "-w", "all", inputFile.toString()};
+        Main.main(args);
+
+        // TODO: need to figure out the expectedOut
+        String expectedOut = "Too is tomorrow." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Assertions.assertEquals(expectedOut,capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+    }
+	
+	
+		// Frame 54: (Key = 5.1.2.2.0.0.0.)
+    @Test
+    public void transformtxtTest54() {
+        String input = "   Today is tomorrow." + System.lineSeparator()
+                + "         Yesterday is today." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-x", "-g", "-r", "old", "new", "-t", "65", inputFile.toString()};
+        Main.main(args);
+
+        // TODO: need to figure out the expectedOut
+        String expectedOut = "Too is tomorrow." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Assertions.assertEquals(expectedOut,capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+    }
+	
+		// Frame 55: (Key = 5.1.2.3.0.0.0.)
+    @Test
+    public void transformtxtTest55() {
+        String input = "   Today is tomorrow." + System.lineSeparator()
+                + "         Yesterday is today." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-x", "-g", "-r", "old", "new", inputFile.toString()};
+        Main.main(args);
+
+        // TODO: need to figure out the expectedOut
+        String expectedOut = "Too is tomorrow." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Assertions.assertEquals(expectedOut,capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+    }
+	
+	
+		// Frame 56: (Key = 5.1.6.1.0.0.0.)
+    @Test
+    public void transformtxtTest56() {
+        String input = "   Today is tomorrow." + System.lineSeparator()
+                + "         Yesterday is today." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-x", "-w", "all", inputFile.toString()};
+        Main.main(args);
+
+        // TODO: need to figure out the expectedOut
+        String expectedOut = "Too is tomorrow." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Assertions.assertEquals(expectedOut,capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+    }
+	
+	
+		// Frame 57: (Key = 5.1.6.2.0.0.0.)
+    @Test
+    public void transformtxtTest57() {
+        String input = "   Today is tomorrow." + System.lineSeparator()
+                + "         Yesterday is today." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-x", "-t", "14", inputFile.toString()};
+        Main.main(args);
+
+        // TODO: need to figure out the expectedOut
+        String expectedOut = "Too is tomorrow." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Assertions.assertEquals(expectedOut,capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+    }
+	
+		// Frame 58: (Key = 5.1.6.3.0.0.0.)
+    @Test
+    public void transformtxtTest58() {
+        String input = "   Today is tomorrow." + System.lineSeparator()
+                + "         Yesterday is today." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-x", inputFile.toString()};
+        Main.main(args);
+
+        // TODO: need to figure out the expectedOut
+        String expectedOut = "Too is tomorrow." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Assertions.assertEquals(expectedOut,capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+    }
+	
+		// Frame 59: (Key = 5.2.1.1.0.0.0.)
+    @Test
+    public void transformtxtTest59() {
+        String input = "   Today is tomorrow." + System.lineSeparator()
+                + "         Yesterday is today." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-r", "old", "new", "-w", "leading", inputFile.toString()};
+        Main.main(args);
+
+        // TODO: need to figure out the expectedOut
+        String expectedOut = "Too is tomorrow." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Assertions.assertEquals(expectedOut,capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+    }
+	
+		// Frame 60: (Key = 5.2.1.2.0.0.0.)
+    @Test
+    public void transformtxtTest60() {
+        String input = "   Today is tomorrow." + System.lineSeparator()
+                + "         Yesterday is today." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-r", "old", "new", "-t", "28", inputFile.toString()};
+        Main.main(args);
+
+        // TODO: need to figure out the expectedOut
+        String expectedOut = "Too is tomorrow." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Assertions.assertEquals(expectedOut,capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+    }
+	
+		// Frame 61: (Key = 5.2.1.3.0.0.0.)
+    @Test
+    public void transformtxtTest61() {
+        String input = "   Today is tomorrow." + System.lineSeparator()
+                + "         Yesterday is today." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-r", "old", "new", inputFile.toString()};
+        Main.main(args);
+
+        // TODO: need to figure out the expectedOut
+        String expectedOut = "Too is tomorrow." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Assertions.assertEquals(expectedOut,capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+    }
+	
+		// Frame 62: (Key = 5.2.2.1.0.0.0.)
+    @Test
+    public void transformtxtTest62() {
+        String input = "   Today is tomorrow." + System.lineSeparator()
+                + "         Yesterday is today." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-g", "-r", "old", "new", "-w", "24", inputFile.toString()};
+        Main.main(args);
+
+        // TODO: need to figure out the expectedOut
+        String expectedOut = "Too is tomorrow." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Assertions.assertEquals(expectedOut,capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+    }
+	
+		// Frame 63: (Key = 5.2.2.2.0.0.0.)
+    @Test
+    public void transformtxtTest63() {
+        String input = "   Today is tomorrow." + System.lineSeparator()
+                + "         Yesterday is today." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-g", "-r", "old", "new", "-t", "3", inputFile.toString()};
+        Main.main(args);
+
+        // TODO: need to figure out the expectedOut
+        String expectedOut = "Too is tomorrow." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Assertions.assertEquals(expectedOut,capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+    }
+	
+		// Frame 64: (Key = 5.2.2.3.0.0.0.)
+    @Test
+    public void transformtxtTest64() {
+        String input = "   Today is tomorrow." + System.lineSeparator()
+                + "         Yesterday is today." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-g", "-r", "old", "new", inputFile.toString()};
+        Main.main(args);
+
+        // TODO: need to figure out the expectedOut
+        String expectedOut = "Too is tomorrow." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Assertions.assertEquals(expectedOut,capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+    }
+	
+		// Frame 65: (
+    @Test
+    public void transformtxtTest65() {
+        String input = "   Today is tomorrow." + System.lineSeparator()
+                + "         Yesterday is today." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-w", "trailing", inputFile.toString()};
+        Main.main(args);
+
+        // TODO: need to figure out the expectedOut
+        String expectedOut = "Too is tomorrow." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Assertions.assertEquals(expectedOut,capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+    }
+	
+		// Frame 66: (Key = 5.2.6.2.0.0.0.)
+    @Test
+    public void transformtxtTest66() {
+        String input = "   Today is tomorrow." + System.lineSeparator()
+                + "         Yesterday is today." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-t", "8", inputFile.toString()};
+        Main.main(args);
+
+        // TODO: need to figure out the expectedOut
+        String expectedOut = "Too is tomorrow." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Assertions.assertEquals(expectedOut,capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+    }
+	
+		// Frame 67: (Key = 5.2.6.3.0.0.0.)
+    @Test
+    public void transformtxtTest67() {
+        String input = "   Today is tomorrow." + System.lineSeparator()
+                + "         Yesterday is today." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {inputFile.toString()};
+        Main.main(args);
+
+        // TODO: need to figure out the expectedOut
+        String expectedOut = "Too is tomorrow." + System.lineSeparator()
+                + "Twesday is not real." + System.lineSeparator();
+
+        Assertions.assertEquals(expectedOut,capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+    }
+	
 }

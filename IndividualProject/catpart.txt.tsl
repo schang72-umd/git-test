@@ -47,8 +47,8 @@ Test Case 12 		<single>
    Content :  ""
 
 
-Test Case 13 		<single>
-   Content :  "\n"
+Test Case 13 		<error>
+   Content :  (no-EOL-at-end)
 
 
 Test Case 14 		(Key = 1.1.1.1.0.0.0.)
