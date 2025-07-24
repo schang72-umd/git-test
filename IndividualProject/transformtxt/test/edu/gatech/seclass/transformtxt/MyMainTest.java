@@ -222,11 +222,13 @@ public class MyMainTest {
     // Test input string is empty.
     @Test
     public void transformtxtTest12() {
-        String input = "";
+        String input = "" + System.lineSeparator();
 
         Path inputFile = createFile(input);
-        String[] args = {inputFile.toString()};
+        String[] args = {"-x","-w","all", inputFile.toString()};
         Main.main(args);
+
+        String expectedOut = "" + System.lineSeparator();
 
         Assertions.assertTrue(capture.stdout().isEmpty());
         Assertions.assertTrue(capture.stderr().isEmpty());
@@ -246,7 +248,7 @@ public class MyMainTest {
         Main.main(args);
 
         Assertions.assertTrue(capture.stdout().isEmpty());
-        // Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(usageStr,capture.stderr());
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
 
